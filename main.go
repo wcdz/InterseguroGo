@@ -149,5 +149,5 @@ func main() {
 	if port == "" {
 		port = "8080" // Valor predeterminado si no se encuentra la variable PORT
 	}
-	log.Fatal(app.Listen(":3000"))
+	log.Fatal(app.Listen(":" + port))
 }
