@@ -129,7 +129,7 @@ func main() {
 		}
 
 		// Enviar el payload a la API de Node.js
-		resp, err := http.Post("http://localhost:3000/analyze", "application/json", bytes.NewBuffer(payloadJSON))
+		resp, err := http.Post(os.Getenv("API_EXPRESS")+"/analyze", "application/json", bytes.NewBuffer(payloadJSON))
 		if err != nil {
 			return c.Status(500).JSON(fiber.Map{"error": "Fallo al comunicarse con el servidor Express"})
 		}
