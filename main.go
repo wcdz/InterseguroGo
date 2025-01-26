@@ -45,9 +45,10 @@ func main() {
 
 	// Configurar CORS para permitir solicitudes desde el front-end (localhost:5173)
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: os.Getenv("CORS_FRONT"), // Permitir solicitudes solo desde esta URL
-		AllowMethods: "GET,POST,PUT,DELETE",   // Métodos permitidos
-		AllowHeaders: "Content-Type",          // Encabezados permitidos
+		AllowOrigins: "*",
+		// os.Getenv("CORS_FRONT"), // Permitir solicitudes solo desde esta URL
+		AllowMethods: "GET,POST,PUT,DELETE", // Métodos permitidos
+		AllowHeaders: "Content-Type",        // Encabezados permitidos
 	}))
 
 	// Endpoint para realizar la factorización QR y enviar datos a Node.js
